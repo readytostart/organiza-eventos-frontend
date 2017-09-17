@@ -2,6 +2,7 @@
 
 const Koa = require('koa');
 const bodyParser = require('koa-bodyparser');
+const enforceHttps = require('koa-sslify');
 const koaStatic = require('koa-static');
 const fs = require('fs');
 
@@ -9,17 +10,19 @@ initConfig();
 
 const leadEndpoint = require('./app/endpoint/LeadEndpoint');
 
-
 const app = new Koa();
 
-app.use(bodyParser());
+if (process.env.NODE_ENV === "production") {
+    app.use(enforceHttps());
+}
 app.use(koaStatic('target'));
+app.use(bodyParser());
 
 leadEndpoint.routes.forEach((r) => app.use(r));
 
 app.use(async (ctx, next) => {
     await next();
-    if (ctx.status === 404) {
+    if (ctx.status === 404 && ctx.request.url !== "/favicon.ico") {
         ctx.type = 'html';
         ctx.body = fs.createReadStream('./target/404.html');
     }
