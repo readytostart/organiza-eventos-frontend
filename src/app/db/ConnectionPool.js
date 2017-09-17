@@ -30,17 +30,16 @@ class WrappedConnection {
 
     query(options) {
         return new Promise((resolve, reject) => {
-            const query = this.connection.query(
+            this.connection.query(
                 options,
-                ((err, results, fields) => {
+                (err, results, fields) => {
                     if (err != null) {
                         reject(err);
                     } else {
                         resolve({results, fields});
                     }
-                })
+                }
             );
-            console.log(query);
         });
 
     }

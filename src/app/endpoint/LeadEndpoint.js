@@ -1,13 +1,13 @@
 "use strict";
 
 const router = require('koa-route');
-const inscricaoService = require("../service/InscricaoService");
+const leadService = require("../service/LeadService");
 
 module.exports = {
     routes: [
-        router.post('/inscricoes',
+        router.post('/leads',
             async (ctx) => {
-                await inscricaoService.registrar(ctx.request.body);
+                await leadService.create(ctx.request.body);
                 ctx.status = 201;
             }
         ),

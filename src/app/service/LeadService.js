@@ -2,7 +2,7 @@
 
 const connectionPool = require("../db/ConnectionPool");
 
-async function registrar(lead) {
+async function create(lead) {
     const connection = await connectionPool.getConnection();
 
     await connection.query({
@@ -13,5 +13,5 @@ async function registrar(lead) {
 }
 
 module.exports = {
-    registrar,
+    create,
 };

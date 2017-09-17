@@ -5,14 +5,14 @@ const bodyParser = require('koa-bodyparser');
 const koaStatic = require('koa-static');
 const fs = require('fs');
 
-const inscricaoEndpoint = require('./app/endpoint/InscricaoEndpoint')
+const leadEndpoint = require('./app/endpoint/LeadEndpoint');
 
 const app = new Koa();
 
 app.use(bodyParser());
 app.use(koaStatic('target'));
 
-inscricaoEndpoint.routes.forEach((r) => app.use(r));
+leadEndpoint.routes.forEach((r) => app.use(r));
 
 app.use(async (ctx, next) => {
     await next();
