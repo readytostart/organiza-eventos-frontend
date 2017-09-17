@@ -2,23 +2,37 @@
 
 const mysql = require('mysql');
 
-const pool = mysql.createPool({
-    host: process.env.DB_HOST,
-    database: process.env.DB_DATABASE,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-});
+class ConnectionPool {
+    constructor() {
+        this.connectionParams = {
+            host: process.env.DB_HOST,
+            database: process.env.DB_DATABASE,
+            user: process.env.DB_USER,
+            password: process.env.DB_PASSWORD,
+        };
 
-function getConnection() {
-    return new Promise((resolve, reject) => {
-        pool.getConnection((err, connection) => {
-            if (err != null) {
+        console.log("ConnectionPool.connectionParams: ", JSON.stringify(this.connectionParams));
+
+        Object.freeze(this);
+    }
+
+    getConnection() {
+        return new Promise((resolve, reject) => {
+            try {
+                let connection = mysql.createConnection(this.connectionParams);
+
+                connection.connect((err) => {
+                    if (err != null) {
+                        reject(err);
+                    } else {
+                        resolve(new WrappedConnection(connection));
+                    }
+                })
+            } catch (err) {
                 reject(err);
-            } else {
-                resolve(new WrappedConnection(connection));
             }
-        })
-    });
+        });
+    }
 }
 
 class WrappedConnection {
@@ -44,6 +58,4 @@ class WrappedConnection {
     }
 }
 
-module.exports = {
-    getConnection,
-};
+module.exports = new ConnectionPool();
