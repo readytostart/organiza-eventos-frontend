@@ -8,5 +8,5 @@
 
 # Build
 Execute the commands:
-* `jekyll serve`
+* `jekyll build --watch`
 * `npm run serve`

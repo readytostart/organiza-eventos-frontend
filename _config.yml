@@ -45,6 +45,7 @@ plugins:
 # Where things are
 source: ./src/jekyll
 destination: ./target
+include: ["_pages"]
 
 # Outputting
 permalink: /blog/:year/:month/:day/:title.html
