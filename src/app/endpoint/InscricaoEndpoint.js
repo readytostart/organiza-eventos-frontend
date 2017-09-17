@@ -6,11 +6,10 @@ const inscricaoService = require("../service/InscricaoService");
 module.exports = {
     routes: [
         router.post('/inscricoes',
-            (ctx) =>
-                inscricaoService.registrar(ctx.request.body)
-                    .then(() => {
-                        ctx.status = 201;
-                    })
-        )
+            async (ctx) => {
+                await inscricaoService.registrar(ctx.request.body);
+                ctx.status = 201;
+            }
+        ),
     ],
 };

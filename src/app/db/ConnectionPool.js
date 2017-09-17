@@ -16,11 +16,34 @@ function getConnection() {
             if (err != null) {
                 reject(err);
             } else {
-                resolve(connection);
+                resolve(new WrappedConnection(connection));
             }
         })
-
     });
+}
+
+class WrappedConnection {
+    constructor(connection) {
+        this.connection = connection;
+        Object.freeze(this);
+    }
+
+    query(options) {
+        return new Promise((resolve, reject) => {
+            const query = this.connection.query(
+                options,
+                ((err, results, fields) => {
+                    if (err != null) {
+                        reject(err);
+                    } else {
+                        resolve({results, fields});
+                    }
+                })
+            );
+            console.log(query);
+        });
+
+    }
 }
 
 module.exports = {
