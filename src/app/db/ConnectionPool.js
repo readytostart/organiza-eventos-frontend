@@ -1,13 +1,12 @@
 "use strict";
 
 const mysql = require('mysql');
-const argv = require('yargs').argv;
 
 const pool = mysql.createPool({
-    host: argv.db.host,
-    database: argv.db.database,
-    user: argv.db.user,
-    password: argv.db.password,
+    host: process.env.DB_HOST,
+    database: process.env.DB_DATABASE,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
 });
 
 function getConnection() {

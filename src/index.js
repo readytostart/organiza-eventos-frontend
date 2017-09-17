@@ -5,7 +5,10 @@ const bodyParser = require('koa-bodyparser');
 const koaStatic = require('koa-static');
 const fs = require('fs');
 
+initConfig();
+
 const leadEndpoint = require('./app/endpoint/LeadEndpoint');
+
 
 const app = new Koa();
 
@@ -22,6 +25,11 @@ app.use(async (ctx, next) => {
     }
 });
 
-app.listen(3000);
+app.listen(process.env.PORT);
 
-console.log("server started at http://localhost:3000");
+console.log(`Server started at http://localhost:${process.env.PORT}`);
+
+function initConfig() {
+    require('dotenv').config({path: require('yargs').argv.envfile});
+    process.env.PORT = process.env.PORT || 3000;
+}
