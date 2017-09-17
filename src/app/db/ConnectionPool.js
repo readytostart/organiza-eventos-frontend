@@ -6,12 +6,11 @@ class ConnectionPool {
     constructor() {
         this.connectionParams = {
             host: process.env.DB_HOST,
+            socketPath: process.env.DB_SOCKETPATH,
             database: process.env.DB_DATABASE,
             user: process.env.DB_USER,
+            password: process.env.DB_PASSWORD,
         };
-        if (process.env.DB_PASSWORD) {
-            this.connectionParams.password = process.env.DB_PASSWORD;
-        }
         Object.freeze(this.connectionParams);
 
         console.log("ConnectionPool.connectionParams: ", JSON.stringify(this.connectionParams));
