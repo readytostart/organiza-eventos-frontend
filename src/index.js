@@ -12,14 +12,6 @@ const leadEndpoint = require('./app/endpoint/LeadEndpoint');
 
 const app = new Koa();
 
-if (process.env.NODE_ENV === "production") {
-    app.use(enforceHttps());
-}
-app.use(koaStatic('target'));
-app.use(bodyParser());
-
-leadEndpoint.routes.forEach((r) => app.use(r));
-
 app.use(async (ctx, next) => {
     await next();
     if (ctx.status === 404 && ctx.request.url !== "/favicon.ico") {
@@ -27,6 +19,17 @@ app.use(async (ctx, next) => {
         ctx.body = fs.createReadStream('./target/404.html');
     }
 });
+
+if (process.env.NODE_ENV === "production") {
+    app.use(enforceHttps({
+        trustProtoHeader: true,
+    }));
+}
+
+app.use(koaStatic('target'));
+app.use(bodyParser());
+
+leadEndpoint.routes.forEach((r) => app.use(r));
 
 app.listen(process.env.PORT);
 
