@@ -1,0 +1,21 @@
+{
+  "name": "fake-moblee",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "serve": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "git+https://github.com/readytostart/fake-moblee.git",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/readytostart/fake-moblee/issues"
+  },
+  "homepage": "https://github.com/readytostart/fake-moblee#readme",
+  "main": "index.js",
+  "author": "ypconstante <ypconstante@gmail.com>",
+  "dependencies": {
+    "koa": "^2.3.0",
+    "koa-static": "^4.0.1"
+  }
+}

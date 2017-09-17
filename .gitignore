@@ -57,5 +57,13 @@ typings/
 # dotenv environment variables file
 .env
 
+# IDEA
 .idea/
 *.iml
+
+# sass
+.sass-cache
+
+# build
+target
+
