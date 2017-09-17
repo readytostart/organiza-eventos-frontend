@@ -1,9 +1,18 @@
+"use strict";
+
 const Koa = require('koa');
+const bodyParser = require('koa-bodyparser');
 const koaStatic = require('koa-static');
 const fs = require('fs');
+
+const inscricaoEndpoint = require('./app/endpoint/InscricaoEndpoint')
+
 const app = new Koa();
 
+app.use(bodyParser());
 app.use(koaStatic('target'));
+
+inscricaoEndpoint.routes.forEach((r) => app.use(r));
 
 app.use(async (ctx, next) => {
     await next();
@@ -14,3 +23,5 @@ app.use(async (ctx, next) => {
 });
 
 app.listen(3000);
+
+console.log("server started at http://localhost:3000");

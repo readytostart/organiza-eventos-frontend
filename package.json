@@ -16,6 +16,10 @@
   "author": "ypconstante <ypconstante@gmail.com>",
   "dependencies": {
     "koa": "^2.3.0",
-    "koa-static": "^4.0.1"
+    "koa-bodyparser": "^4.2.0",
+    "koa-route": "^3.2.0",
+    "koa-static": "^4.0.1",
+    "mysql": "^2.14.1",
+    "yargs": "^8.0.2"
   }
 }
