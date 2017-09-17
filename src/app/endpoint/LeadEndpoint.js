@@ -8,7 +8,7 @@ module.exports = {
         router.post('/leads',
             async (ctx) => {
                 await leadService.create(ctx.request.body);
-                ctx.status = 201;
+                ctx.response.redirect("/landing-page-success/");
             }
         ),
     ],
