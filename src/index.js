@@ -13,11 +13,11 @@ const leadEndpoint = require('./app/endpoint/LeadEndpoint');
 const app = new Koa();
 
 app.use(async (ctx, next) => {
-    await next();
-    if (ctx.status === 404 && ctx.request.url !== "/favicon.ico") {
-        ctx.type = 'html';
-        ctx.body = fs.createReadStream('./target/404.html');
+    if (!ctx.request.header.host.startsWith("www.")) {
+        ctx.request.header.host = "www." + ctx.request.header.host;
+        ctx.state.redirectToHref = true;
     }
+    await next();
 });
 
 if (process.env.NODE_ENV === "production") {
@@ -25,6 +25,19 @@ if (process.env.NODE_ENV === "production") {
         trustProtoHeader: true,
     }));
 }
+
+app.use(async (ctx, next) => {
+    if (ctx.state.redirectToHref) {
+        ctx.status = 301;
+        ctx.redirect(ctx.request.href)
+    } else {
+        await next();
+        if (ctx.status === 404 && ctx.request.url !== "/favicon.ico") {
+            ctx.type = 'html';
+            ctx.body = fs.createReadStream('./target/404.html');
+        }
+    }
+});
 
 app.use(koaStatic('target'));
 app.use(bodyParser());
