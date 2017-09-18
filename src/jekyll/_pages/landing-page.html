@@ -4,8 +4,22 @@ title: Landing page
 permalink: /landing-page/
 ---
 
-<form action="/leads" method="POST">
-  <input type="email" name="email" placeholder="Your Email">
-  <button type="submit">Submit</button>
+<form action="http://organizaeventosapi.azurewebsites.net/api/leads" method="POST">
+    <input type="text" name="nome" placeholder="Nome Completo">
+    <input type="email" name="email" placeholder="Email">
+    <button type="submit">Submit</button>
+    <span class="error-message"></span>
 </form>
 
+<script type="text/javascript">
+    (function () {
+        var errorMessage = getQueryStringValue("error");
+        if(errorMessage) {
+            document.querySelector(".error-message").textContent = errorMessage;
+        }
+    })();
+
+    function getQueryStringValue (key) {
+        return decodeURIComponent(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURIComponent(key).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"));
+    }
+</script>
