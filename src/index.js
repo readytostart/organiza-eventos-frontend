@@ -2,6 +2,8 @@
 
 const Koa = require('koa');
 const bodyParser = require('koa-bodyparser');
+const conditional = require('koa-conditional-get');
+const etag = require('koa-etag');
 const enforceHttps = require('koa-sslify');
 const koaStatic = require('koa-static');
 const fs = require('fs');
@@ -11,6 +13,9 @@ initConfig();
 const leadEndpoint = require('./app/endpoint/LeadEndpoint');
 
 const app = new Koa();
+
+app.use(conditional());
+app.use(etag());
 
 app.use(async (ctx, next) => {
     if (!ctx.request.header.host.startsWith("www.")) {
