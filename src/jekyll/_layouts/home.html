@@ -18,7 +18,7 @@ layout: default
                 <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
             </h2>
 
-            {{ post.excerpt | remove: '<p>' | remove: '</p>' }}
+            {{ post.custom_excerpt }}
             <a href="{{ post.url | relative_url }}">Continuar lendo...</a>
         </li>
         {% endfor %}
