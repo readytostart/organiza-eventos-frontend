@@ -1,3 +1,144 @@
 ---
-# Only the main Sass file needs front matter (the dashes are enough)
 ---
+
+$color-white-background: #fcfcfc;
+$color-pink: #c52173;
+$color-light-blue: #34cef5l;
+
+body {
+    background-color: #dddee0;
+    font-family: 'Duru Sans', sans-serif;
+}
+
+.nav-header {
+    background-color: $color-white-background;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.nav-header #logo {
+    text-align: left;
+}
+
+.page-content {
+    background-color: $color-white-background;
+    padding-top: 1px;
+}
+
+.page-content .wrapper {
+    max-width: -webkit-calc(1200px - (30px * 2));
+    max-width: calc(1200px - (30px * 2));;
+}
+
+.post-header {
+    padding-top: 0;
+}
+
+.post-header .img-wrapper {
+    text-align: center;
+    margin-top: -1px;
+}
+
+.post-title {
+    color: $color-pink;
+    font-weight: bold;
+}
+
+.post-meta {
+    text-align: right;
+    font-style: italic;
+}
+
+.post-list {
+    padding-top: 20px
+}
+
+a.post-link {
+    color: $color-pink;
+    font-weight: bold;
+}
+
+.post-list .post-meta {
+    display: block;
+}
+
+.sidebar {
+    background-color: $color-white-background;
+    padding: 20px;
+}
+
+#conteudo form {
+    margin-left: 50px;
+    margin-right: 50px;
+    background-color: #fcfcfc;
+    padding: 15px;
+    border-radius: 5px 5px 0 5px;
+    border-color: #34CEF5;
+    border-width: medium;
+    border-style: solid;
+    text-align: center;
+}
+
+#conteudo form button {
+    margin-left: 50px;
+    margin-right: 50px;
+    background: #C52173;
+    color: #FFFFFF;
+    text-shadow: none;
+    font-weight: bold;
+    align-self: center;
+    text-align: center;
+}
+
+#conteudo h4 {
+    width: 100%;
+    background: #34CEF5;
+    color: #FFFFFF;
+    text-shadow: none;
+    font-weight: bold;
+    margin: 0px;
+    text-align: center;
+}
+
+#conteudo h5 {
+    width: 100%;
+    font-size: 15px;
+    text-align: justify;
+}
+
+#barra-lateral {
+    background-color: transparent;
+    max-width: 100%;
+}
+
+#barra-lateral .row {
+    margin-left: 10px;
+    background-color: #FFFFFF;
+}
+
+#barra-lateral form {
+    margin: 5px;
+    background-color: #fcfcfc;
+    padding: 15px;
+    border-radius: 5px 5px 0 5px;
+    border-color: #34CEF5;
+    border-width: medium;
+    border-style: solid;
+}
+
+#barra-lateral form button {
+    width: 100%;
+    background: #C52173;
+    color: #FFFFFF;
+    text-shadow: none;
+    font-weight: bold;
+}
+
+#barra-lateral h3 {
+    width: 100%;
+    background: #34CEF5;
+    color: #FFFFFF;
+    text-shadow: none;
+    font-weight: bold;
+    margin: 0px;
+}
