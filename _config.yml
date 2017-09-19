@@ -26,6 +26,7 @@ github_username:  jekyll
 
 lang: pt-BR
 google_analytics: "UA-106621633-1"
+facebook_pixel: "1893863284265247"
 
 # Build settings
 markdown: kramdown
