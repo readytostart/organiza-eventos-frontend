@@ -40,6 +40,7 @@ app.use(async (ctx, next) => {
         if (ctx.status === 404 && ctx.request.url !== "/favicon.ico") {
             ctx.type = 'html';
             ctx.body = fs.createReadStream('./target/404.html');
+            ctx.status = 404;
         }
     }
 });
