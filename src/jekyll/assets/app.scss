@@ -30,6 +30,7 @@ body {
 .page-content {
     background-color: $color-white;
     padding-top: 1px;
+    min-height: calc(100vh - 281px);
 }
 
 .page-content .wrapper {
@@ -170,7 +171,6 @@ a.post-continue-reading {
             }
         }
     }
-
 
 }
 
