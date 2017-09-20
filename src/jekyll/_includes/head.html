@@ -6,6 +6,8 @@
     <title>{% if page.title %}{{ page.title | escape }} - {% endif %}{{ site.title | escape }}</title>
     <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
 
+    <meta property="og:image:url" content="https://www.organizaevento.blog.br{% if page.custom_main_image %}{{page.custom_main_image}}{% else %}/assets/img/logo.png{% endif %}" />
+
     <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
     <link rel="stylesheet" href="{{ "/assets/third-party/bootstrap.css" | relative_url }}">
     <link rel="stylesheet" href="{{ "/assets/third-party/bootstrap-theme.css" | relative_url }}">
@@ -13,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700" rel="stylesheet">
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
     <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | relative_url }}">
-
+    
     {% if site.google_analytics %}
     {% include google-analytics.html %}
     {% endif %}
