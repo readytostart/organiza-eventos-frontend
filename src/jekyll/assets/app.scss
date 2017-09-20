@@ -1,11 +1,15 @@
 ---
 ---
 
-$color-white-background: #fcfcfc;
+$color-white: #fcfcfc;
 $color-pink: #EC1164;
 $color-blue: #00B8F1;
 
 $font-size-base: 18px;
+
+%round-corners {
+    border-radius: 999px;
+}
 
 body {
     background-color: #E6E7E8;
@@ -14,7 +18,7 @@ body {
 }
 
 .nav-header {
-    background-color: $color-white-background;
+    background-color: $color-white;
     padding: 15px;
     margin-bottom: 20px;
 }
@@ -24,7 +28,7 @@ body {
 }
 
 .page-content {
-    background-color: $color-white-background;
+    background-color: $color-white;
     padding-top: 1px;
 }
 
@@ -66,6 +70,7 @@ a.post-link {
 }
 
 a.post-continue-reading {
+    @extend %round-corners;
     margin-top: 15px;
     display: block;
     border: 5px solid $color-blue;
@@ -73,10 +78,46 @@ a.post-continue-reading {
     color: $color-blue;
     font-weight: bold;
     line-height: $font-size-base * 2;
-    border-radius: 999px;
 }
 
 .sidebar {
-    background-color: $color-white-background;
+    background-color: $color-white;
     padding: 20px;
 }
+
+.form-cadastro {
+    border: 2px solid $color-blue;
+    text-align: center;
+}
+
+.form-cadastro .form-title {
+    margin: 0;
+    padding: 5px 0;
+    background-color: $color-blue;
+    color: $color-white;
+    font-size: 22px;
+}
+
+.form-cadastro .form-content {
+    padding: 5px 10px;
+}
+
+.form-cadastro .form-control {
+    margin-bottom: 10px;
+}
+
+.form-cadastro .btn {
+    @extend %round-corners;
+    background-color: $color-pink;
+    color: $color-white;
+    font-weight: bold;
+    width: 100%;
+    width: -webkit-calc(100% - (30px * 2));
+    width: calc(100% - (30px * 2));
+}
+
+.sidebar .form-cadastro {
+    margin: 0 -10px;
+}
+
+
