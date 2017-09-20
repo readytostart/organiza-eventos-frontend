@@ -18,7 +18,8 @@ layout: default
             <span class="post-meta">{{ post.date | date: date_format }}</span>
 
             {{ post.custom_excerpt }}
-            <a href="{{ post.url | relative_url }}">Continuar lendo...</a>
+
+            <a class="post-continue-reading" href="{{ post.url | relative_url }}">Continuar lendo ...</a>
         </li>
         {% endfor %}
     </ul>
