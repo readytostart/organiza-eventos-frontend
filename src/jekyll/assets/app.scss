@@ -114,10 +114,17 @@ a.post-continue-reading {
     width: 100%;
     width: -webkit-calc(100% - (30px * 2));
     width: calc(100% - (30px * 2));
+    white-space: normal;
 }
 
 .sidebar .form-cadastro {
     margin: 0 -10px;
 }
 
+@media all and (min-width: 991px) {
+    .post .form-cadastro input {
+        width: 47%;
+        display: inline-block;
+    }
+}
 
