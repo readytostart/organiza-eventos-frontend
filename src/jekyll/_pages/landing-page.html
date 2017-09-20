@@ -4,18 +4,19 @@ title: Fazer cadastro
 permalink: /landing-page/
 ---
 
-<form action="http://organizaeventosapi.azurewebsites.net/api/leads" method="POST">
-    <input type="text" name="nome" placeholder="Nome Completo">
-    <input type="email" name="email" placeholder="Email">
-    <button type="submit">Submit</button>
-    <span class="error-message"></span>
-</form>
+<div class="alert alert-danger" role="alert">
+    <span class="submit-error-message" style="font-size: 20px; text-align: center"></span>
+</div>
+
+<br>
+
+{% include form-cadastro-lead.html %}
 
 <script type="text/javascript">
     (function () {
         var errorMessage = getQueryStringValue("error");
         if(errorMessage) {
-            document.querySelector(".error-message").textContent = errorMessage;
+            document.querySelector(".submit-error-message").textContent = errorMessage;
         }
     })();
 
