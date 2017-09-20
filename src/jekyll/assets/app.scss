@@ -128,3 +128,57 @@ a.post-continue-reading {
     }
 }
 
+.site-footer {
+    background-color: #4d4d4d;
+    min-height: 150px;
+    color: $color-white;
+    text-align: center;
+    vertical-align: middle;
+    padding: 10px 0 0 0;
+    border-top: 0;
+
+    .site-logo-wrapper {
+        text-align: left;
+        line-height: 100px;
+    }
+
+    .rede-social-logo {
+        margin: 0 10px;
+        line-height: 100px;
+    }
+
+    .site-description {
+        font-size: 13px;
+        padding-bottom: 45px;
+
+        > div {
+            display: table;
+            height: 100px;
+
+            @media all and (max-height: 991px) {
+                padding-top: 10px;
+                height: auto;
+            }
+
+            > span {
+                display: table-cell;
+                vertical-align: middle;
+            }
+        }
+    }
+
+
+}
+
+#mxcw-root.mxcw-root {
+    font-family: 'Ubuntu', sans-serif;
+
+    .mxcw-titlebar {
+        background: $color-blue;
+    }
+
+    button {
+        background-color: $color-blue;
+        border-color: $color-blue;
+    }
+}

@@ -16,7 +16,7 @@
 title: Organiza Evento
 email: your-email@example.com
 description: > # this means to ignore newlines until "baseurl:"
-  A organiza evento esta sediada em Florianópolis,
+  A Organiza Evento esta sediada em Florianópolis,
   surge com o propósito de compartilhar tudo sobre universo dos eventos corporativos de forma
   integrada unindo organizadores de eventos, participantes e expositores.
 baseurl: "" # the subpath of your site, e.g. /blog
