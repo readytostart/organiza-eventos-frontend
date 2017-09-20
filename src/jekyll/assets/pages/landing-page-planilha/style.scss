@@ -1,0 +1,90 @@
+---
+---
+
+$color-white: #fcfcfc;
+$color-pink: #EC1164;
+$color-blue: #00B8F1;
+$color-gray: #4E4D4F;
+
+$vertical-padding-left-section: 20px;
+
+body {
+    background-color: #fcfcfc;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.nav-header {
+    height: 100px;
+    line-height: 100px;
+    vertical-align: middle;
+    padding-left: $vertical-padding-left-section;
+}
+
+.main {
+    height: 608px;
+    padding-right: 695px;
+    padding-left: 30px;
+    color: $color-white;
+    background: $color-blue url("/assets/pages/landing-page-planilha/main.png") no-repeat bottom right 120px;
+
+    h1 {
+        font-weight: bold;
+    }
+
+    span {
+        font-size: 20px;
+    }
+}
+
+.conteudo {
+    min-height: calc(100vh - 708px);
+    margin-top: 30px;
+
+    img {
+        height: 128px;
+        width: 128px;
+        float: left;
+        margin-right: 10px;
+    }
+
+    h2 {
+        font-size: 18px;
+        font-weight: bold;
+        color: $color-blue;
+        margin-top: 0;
+    }
+
+    span {
+        font-size: 16px;
+    }
+
+    @media (min-width: 992px) {
+        > * {
+            padding-left: 0;
+            padding-right: 0;
+        }
+        > :nth-child(2) {
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+    }
+}
+
+.form {
+    background-color: $color-pink;
+    min-height: 100vh;
+    color: $color-white;
+
+    .btn-custom-download {
+        background-color: $color-blue;
+        border: 1px solid darken($color-blue, 10%);
+        color: $color-white;
+        font-weight: bold;
+        font-size: 26px;
+        width: 100%;
+        padding: 15px;
+        border-radius: 5px;
+        text-shadow: 0 2px 1px rgba(0, 0, 0, 0.3);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 1px rgba(0, 0, 0, .075);
+    }
+}

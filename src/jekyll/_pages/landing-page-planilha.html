@@ -1,0 +1,99 @@
+---
+permalink: /landing-page-planilha/
+---
+
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'en'}}">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- TODO -->
+    <title><!-- TODO --> </title>
+    <!-- TODO -->
+    <meta name="description"
+          content="<!-- TODO --> ">
+
+    <meta property="og:image:url"
+          content="https://www.organizaevento.blog.br/assets/pages/landing-page-planilha/main.png"/>
+
+    <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/third-party/bootstrap.css'| relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/third-party/bootstrap-theme.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/pages/landing-page-planilha/style.css' | relative_url }}">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700" rel="stylesheet">
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}"
+          href="{{ '/feed.xml' | relative_url }}">
+
+
+    {% if site.google_analytics %}
+    {% include google-analytics.html %}
+    {% endif %}
+    {% if site.facebook_pixel %}
+    {% include facebook-pixel.html %}
+    {% endif %}
+</head>
+
+
+<body class="container-fluid">
+<div class="row">
+    <div class="col-md-9">
+        <div class="row">
+            <header class="nav-header">
+                <div id="logo">
+                    <a href="/">
+                        <img src="/assets/img/logo.png" width="157" height="66"/>
+                    </a>
+                </div>
+            </header>
+        </div>
+        <div class="row main">
+            <h1>VOCÊ JÁ SABE TODOS SEUS CUSTOS COM FEIRAS?</h1>
+            <span>Não esqueça de nenhum item e nem seja pego de surpresa por alguma taxa de última hora da feira.</span>
+        </div>
+
+        <div class="conteudo clearfix">
+
+            <div class="col-md-4">
+                <img src="/assets/pages/landing-page-planilha/secao-praticidade.png"/>
+                <h2>Praticidade</h2>
+                <span>Tenha em mãos todas as informações de gastos em feiras</span>
+            </div>
+            <div class="col-md-4">
+                <img src="/assets/pages/landing-page-planilha/secao-checklist.png"/>
+                <h2>Check-list</h2>
+                <span>Confira todos os itens investidos pré e pós feira</span>
+            </div>
+            <div class="col-md-4">
+                <img src="/assets/pages/landing-page-planilha/secao-custos.png"/>
+                <h2>Custos</h2>
+                <span>Saiba todos os gastos por item e total realizados na feira</span>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-md-3 form">
+        Faça seu download grátis aqui!
+        Basta preencher o formulário abaixo para baixar a planilha de origanização de custos para Feiras.
+
+        <div class="form-group">
+            <label for="nome">Nome completo</label>
+            <input type="text" class="form-control" id="nome" placeholder="Nome completo">
+        </div>
+        <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" class="form-control" id="email" placeholder="Email">
+        </div>
+        <div class="form-group">
+            <label for="empresa">Empresa</label>
+            <input type="text" class="form-control" id="empresa" placeholder="Empresa">
+        </div>
+
+        <button type="submit" class="btn btn-custom-download">Baixar material</button>
+    </div>
+</div>
+
+</body>
+
+</html>
