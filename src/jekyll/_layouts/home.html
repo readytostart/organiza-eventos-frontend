@@ -12,9 +12,13 @@ layout: default
             {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
 
             {% if post.custom_main_image %}
-            <div class="img-wrapper">
-                <img src="{{post.custom_main_image}}">
-            </div>
+
+            <a class="post-link" href="{{ post.url | relative_url }}">
+                <div class="img-wrapper">
+                    <img src="{{post.custom_main_image}}">
+                </div>
+            </a>
+
             {% endif %}
 
             <h2>
