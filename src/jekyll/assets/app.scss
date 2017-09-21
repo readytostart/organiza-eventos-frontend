@@ -27,6 +27,12 @@ body {
     text-align: left;
 }
 
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(51, 51, 51, 0), rgba(51, 51, 51, 0.75), rgba(51, 51, 51, 0));
+}
+
 .page-content {
     background-color: $color-white;
     padding-top: 1px;
@@ -42,7 +48,8 @@ body {
     padding-top: 0;
 }
 
-.post-header .img-wrapper {
+.post-list .img-wrapper,
+.post-header .img-wrapper  {
     text-align: center;
     margin-top: -1px;
 }

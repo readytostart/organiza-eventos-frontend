@@ -10,6 +10,13 @@ layout: default
         {% for post in site.posts %}
         <li>
             {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+
+            {% if post.custom_main_image %}
+            <div class="img-wrapper">
+                <img src="{{post.custom_main_image}}">
+            </div>
+            {% endif %}
+
             <h2>
                 <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
             </h2>
@@ -20,6 +27,8 @@ layout: default
             {{ post.custom_excerpt }}
 
             <a class="post-continue-reading" href="{{ post.url | relative_url }}">Continuar lendo ...</a>
+
+            <hr/>
         </li>
         {% endfor %}
     </ul>
