@@ -27,7 +27,9 @@ layout: default
         {{ content }}
     </div>
 
-    {% include form-cadastro-lead.html formNameSuffix="post" %}
+    <div class="hidden-sm hidden-xs">
+        {% include form-cadastro-lead.html formNameSuffix="post" %}
+    </div>
 
     {% if site.disqus.shortname %}
     {% include disqus_comments.html %}
