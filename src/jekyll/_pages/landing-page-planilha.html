@@ -8,14 +8,12 @@ permalink: /landing-page-planilha/
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- TODO -->
-    <title><!-- TODO --> </title>
-    <!-- TODO -->
+    <title>Planilha de organização de custos para feiras</title>
     <meta name="description"
-          content="<!-- TODO --> ">
+          content="Organize seus custos de cada feira detalhadamente e alcance seus objetivos dentro do orçamento previsto.">
 
     <meta property="og:image:url"
-          content="https://www.organizaevento.blog.br/assets/pages/landing-page-planilha/main.png"/>
+          content="https://www.organizaevento.blog.br/assets/pages/landing-page-planilha/image-share-social-network.jpg"/>
 
     <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/third-party/bootstrap.css'| relative_url }}">
@@ -80,22 +78,24 @@ permalink: /landing-page-planilha/
 
         <br>
 
-        <div class="form-group">
-            <label for="nome">Nome completo</label>
-            <input type="text" class="form-control" id="nome" placeholder="Nome completo">
-        </div>
-        <div class="form-group">
-            <label for="email">E-mail</label>
-            <input type="email" class="form-control" id="email" placeholder="Email">
-        </div>
-        <div class="form-group">
-            <label for="empresa">Empresa</label>
-            <input type="text" class="form-control" id="empresa" placeholder="Empresa">
-        </div>
+        <form onsubmit="return App.formLeadValidation(this)" data-js-form-download-link>
+            <div class="form-group">
+                <label for="nome">Nome completo</label>
+                <input type="text" class="form-control" id="nome" placeholder="Nome completo">
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" class="form-control" id="email" placeholder="Email">
+            </div>
 
-        <button type="submit" class="btn btn-custom-download">Baixar material</button>
+            <span class="js-form-errors"></span>
+
+            <button type="submit" class="btn btn-custom-download">Baixar material</button>
+        </form>
     </div>
 </div>
+
+{% include body-end.html %}
 
 </body>
 
