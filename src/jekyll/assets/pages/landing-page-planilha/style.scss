@@ -112,6 +112,13 @@ body {
     padding-top: 20px;
     padding-bottom: 20px;
 
+    .alert-danger {
+        background: #a94442 none;
+        color: #fcfcfc;
+        text-shadow: 1px 1px #000;
+        border-color: darken(#a94442, 5%);
+    }
+
     .btn-custom-download {
         background-color: $color-blue;
         background-image: linear-gradient(to bottom, lighten($color-blue, 5%) 0%, darken($color-blue, 5%) 100%);;

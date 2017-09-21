@@ -55,7 +55,10 @@
         function error(message) {
             jQuery(".js-form-errors")
                 .text("Erro: " + message)
-                .removeClass("hide");
+                .removeClass("hide")
+                .show()
+                .delay(4000)
+                .fadeOut('slow');
         }
     }
 })();
