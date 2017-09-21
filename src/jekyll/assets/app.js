@@ -7,18 +7,16 @@
 
     function formLeadValidation(form) {
         try {
-            var $form = $(form);
-            var lead = {
+            var isDownload = form.getAttribute("data-js-form-download-link") != null;
+            var cadastro = {
                 nome: form.querySelector("#nome").value,
                 email: form.querySelector("#email").value,
-                ehDownload: form.getAttribute("data-js-form-download-link") != null
+                ehDownload: isDownload
             };
 
-            var queryParams = jQuery.param(lead);
-            jQuery.post("https://organizaeventosapi.azurewebsites.net/api/leads?" + queryParams)
+            jQuery.post("https://organizaeventosapi.azurewebsites.net/api/leads/postfrombody", cadastro)
                 .then(function () {
-                    console.log("sucesso");
-                    console.log(arguments);
+                    leadSuccess(isDownload);
                 })
                 .catch(function () {
                     console.log("erro");
@@ -29,5 +27,12 @@
             console.log(e);
         }
         return false;
+
+        function leadSuccess(isDownload) {
+            if (isDownload) {
+                jQuery(form.querySelector(".js-form-inputs")).addClass("hide");
+                jQuery(form.querySelector(".js-form-download")).removeClass("hide");
+            }
+        }
     }
 })();
