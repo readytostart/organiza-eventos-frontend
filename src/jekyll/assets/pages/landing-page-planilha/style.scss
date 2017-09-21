@@ -21,11 +21,42 @@ body {
 }
 
 .main {
-    height: 608px;
-    padding-right: 695px;
     padding-left: 30px;
     color: $color-white;
     background: $color-blue url("/assets/pages/landing-page-planilha/main.png") no-repeat bottom right 120px;
+
+    padding-right: 600px;
+    background-size: 450px;
+    height: 500px;
+
+    @media all and (max-width: 1150px) {
+        padding-right: 500px;
+        background-size: 350px;
+        height: 400px;
+    }
+
+    @media all and (max-width: 1150px) {
+        padding-right: 450px;
+        background-size: 300px;
+        height: 400px;
+    }
+
+    @media all and (max-width: 800px) {
+        padding-right: 390px;
+        background-position: bottom right 60px;
+    }
+
+    @media all and (max-width: 700px) {
+        padding-right: 300px;
+        background-size: 200px;
+    }
+
+    @media all and (max-width: 600px) {
+        padding-right: 0;
+        padding-bottom: 220px;
+        height:auto;
+        background-position: bottom center;
+    }
 
     h1 {
         font-weight: bold;
@@ -37,8 +68,12 @@ body {
 }
 
 .conteudo {
-    min-height: calc(100vh - 745px);
+    min-height: 150px;
     margin-top: 30px;
+
+    .conteudo-item {
+        min-height: 150px;
+    }
 
     img {
         height: 128px;
@@ -72,7 +107,6 @@ body {
 
 .form-section {
     background-color: $color-pink;
-    min-height: 100vh;
     color: $color-white;
     font-size: 18px;
     padding-top: 20px;
