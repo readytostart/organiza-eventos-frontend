@@ -14,25 +14,48 @@
                 ehDownload: isDownload
             };
 
-            jQuery.post("https://organizaeventosapi.azurewebsites.net/api/leads/postfrombody", cadastro)
-                .then(function () {
-                    leadSuccess(isDownload);
+            jQuery
+                .ajax({
+                    type: "POST",
+                    url: "https://organizaeventosapi.azurewebsites.net/api/leads/postfrombody",
+                    data: JSON.stringify(cadastro),
+                    contentType: 'application/json'
+                })
+                .then(function (data) {
+                    checkSuccess(data, isDownload);
                 })
                 .catch(function () {
                     console.log("erro");
                     console.log(arguments);
+                    error("Não foi possível finalizar a requisição, tente novamente.")
                 });
+
         } catch (e) {
             console.log("exception");
             console.log(e);
+            error("Não foi possível finalizar a requisição, tente novamente.")
         }
         return false;
 
-        function leadSuccess(isDownload) {
+        function checkSuccess(data, isDownload) {
+            if(data.sucesso) {
+                success(isDownload);
+            } else {
+                error(data.mensagem);
+            }
+        }
+
+        function success(isDownload) {
             if (isDownload) {
                 jQuery(form.querySelector(".js-form-inputs")).addClass("hide");
                 jQuery(form.querySelector(".js-form-download")).removeClass("hide");
             }
+        }
+
+        function error(message) {
+            jQuery(".js-form-errors")
+                .text("Erro: " + message)
+                .removeClass("hide");
         }
     }
 })();
