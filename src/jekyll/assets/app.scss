@@ -42,6 +42,14 @@ hr {
         max-width: -webkit-calc(1200px - (30px * 2));
         max-width: calc(1200px - (30px * 2));;
     }
+
+    @media all and (max-width: 991px) {
+        padding-bottom: 0;
+
+        .post-content {
+            margin-bottom: 10px;
+        }
+    }
 }
 
 .post-header {
@@ -102,17 +110,19 @@ a.post-continue-reading {
         width: 100%;
     }
 
-
+    @media all and (max-width: 991px) {
+        padding-top: 0;
+    }
 }
 
 .btn-landing-planilha {
     background-color: $color-blue;
-    border: 1px solid darken($color-blue, 10%);
+    border: 1px solid darken($color-blue, 20%);
 }
 
 .btn-landing-ebook {
     background-color: $color-pink;
-    border: 1px solid darken($color-pink, 10%);
+    border: 1px solid darken($color-pink, 20%);
 }
 
 .form-cadastro {
@@ -189,7 +199,7 @@ a.post-continue-reading {
             display: table;
             height: 100px;
 
-            @media all and (max-height: 991px) {
+            @media all and (max-width: 991px) {
                 padding-top: 10px;
                 height: auto;
             }
