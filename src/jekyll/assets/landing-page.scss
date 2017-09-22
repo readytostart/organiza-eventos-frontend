@@ -25,10 +25,9 @@ body {
     .main {
         padding-left: 30px;
         color: $color-white;
-        background: $primary url("/assets/pages/landing-page-planilha/main.png") no-repeat bottom right 120px;
-
-        padding-right: 600px;
+        background-color: $primary;
         background-size: 450px;
+        padding-right: 600px;
         height: 500px;
 
         @media all and (max-width: 1150px) {
@@ -159,6 +158,10 @@ body {
 }
 
 .landing-page-ebook {
+    .main {
+        background: url("/assets/pages/landing-page-ebook/main.jpg") no-repeat bottom right 120px;
+    }
+
     @include landing-style($color-pink, $color-blue);
 
     .main {
@@ -185,6 +188,12 @@ body {
 }
 
 .landing-page-planilha {
+
+    .main {
+        background: url("/assets/pages/landing-page-planilha/main.png") no-repeat bottom right 120px;
+    }
+
     @include landing-style($color-blue, $color-pink);
+
 }
 
