@@ -37,11 +37,11 @@ hr {
     background-color: $color-white;
     padding-top: 1px;
     min-height: calc(100vh - 281px);
-}
 
-.page-content .wrapper {
-    max-width: -webkit-calc(1200px - (30px * 2));
-    max-width: calc(1200px - (30px * 2));;
+    .wrapper {
+        max-width: -webkit-calc(1200px - (30px * 2));
+        max-width: calc(1200px - (30px * 2));;
+    }
 }
 
 .post-header {
@@ -86,6 +86,23 @@ a.post-continue-reading {
     color: $color-blue;
     font-weight: bold;
     line-height: $font-size-base * 2;
+}
+
+.post {
+    .post-landing-page-links {
+        .btn {
+            width: 100%;
+        }
+
+        .btn-landing-planilha {
+            background-color: $color-blue;
+            border: 1px solid darken($color-blue, 10%);
+        }
+        .btn-landing-ebook {
+            background-color: $color-pink;
+            border: 1px solid darken($color-pink, 10%);
+        }
+    }
 }
 
 .sidebar {

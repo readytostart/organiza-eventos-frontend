@@ -126,7 +126,7 @@ body {
 
         .btn-custom-download {
             background-color: $primary;
-            background-image: linear-gradient(to bottom, lighten($primary, 5%) 0%, darken($primary, 5%) 100%);;
+            background-image: linear-gradient(to bottom, lighten($primary, 5%) 0%, darken($primary, 5%) 100%);
             border: 1px solid darken($primary, 10%);
             color: $color-white;
             font-weight: bold;
