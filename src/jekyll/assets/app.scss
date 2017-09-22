@@ -92,6 +92,10 @@ a.post-continue-reading {
     background-color: $color-white;
     padding: 20px;
     text-align: center;
+
+    img {
+        display: block;
+    }
 }
 
 .form-cadastro {
