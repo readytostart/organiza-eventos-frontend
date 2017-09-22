@@ -58,6 +58,29 @@ body {
         background-position: bottom center;
     }
 
+    .landing-page-ebook & {
+        padding-bottom: 0;
+        .main-content {
+            text-align: center;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            -webkit-transform: translateY(-50%);
+        }
+
+        @media all and (max-width: 600px) {
+
+            padding-bottom: 220px;
+            .main-content {
+                text-align: left;
+                transform: none;
+                -webkit-transform: none;
+
+            }
+        }
+
+    }
+
     h1 {
         font-weight: bold;
     }
@@ -117,6 +140,10 @@ body {
         color: #fcfcfc;
         text-shadow: 1px 1px #000;
         border-color: darken(#a94442, 5%);
+    }
+
+    .btn {
+        white-space: normal;
     }
 
     .btn-custom-download {
