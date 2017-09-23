@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Quiz! Você se considera uma pessoa organizada?</title>
+
+    <link rel="stylesheet" href="../assets/third-party/bootstrap.css">
+    <link rel="stylesheet" href="../assets/third-party/bootstrap-theme.css">
+    <link rel="stylesheet" href="../assets/pages/quiz/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Duru+Sans" rel="stylesheet">
+
+    <script src="../assets/third-party/knockout-3.4.2.js"></script>
+    <script src="../assets/third-party/jquery.js"></script>
+    <script>
+    
+    </script>
+</head>
+<body class="container-fluid">
+    <div class="row">
+        <div class="row">
+            <header class="nav-header">
+                <div id="logo">
+                    <a href="/">
+                        <img src="../assets/img/logo.png" width="157" height="66"/>
+                    </a>
+                </div>
+            </header>
+        </div>
+    </div>
+    <div row class="row-quiz">
+        <div class="col-md-5">
+            <div>
+                <a href="/">
+                    <img src="../assets/pages/quiz/quiz.png" width="175" height="209"/>
+                </a>
+                <h1>Você se considera uma pessoa ORGANIZADA?</h1>
+                <h2>Teste seus conhecimentos e descubra o quão organizado você é.</h2>
+            </div>
+            <div class="js-form-inputs">
+                <div class="form-group">
+                    <input type="text" class="form-control" data-bind="text: nome" placeholder="Nome completo">
+                    <p data-bind="text: nomeInvalido"></p>
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" data-bind="text: email" placeholder="Email">
+                    <p data-bind="text: emailInvalido"></p>
+                </div>
+
+                <button id="iniciar" class="btn">Iniciar!</button>
+            </div>                        
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    var viewModel = function () {
+        self = this;
+        
+        self.nome = ko.observable('');
+        self.email = ko.observable('');
+        self.nomeInvalido = ko.observable('');
+        self.emailInvalido = ko.observable('');
+        self.temNomeInvalido = ko.computed(function(){
+            return self.nomeInvalido() && self.nomeInvalido() != '';
+        }, this);
+        self.temEmailInvalido = ko.computed(function(){
+            return self.emailInvalido() && self.emailInvalido() != '';
+        }, this);
+    }
+
+    ko.applyBindings(new viewModel());
+</script>
+</html>
