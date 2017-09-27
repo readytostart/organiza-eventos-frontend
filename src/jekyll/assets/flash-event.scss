@@ -1,0 +1,120 @@
+---
+---
+
+
+$color-white: #fcfcfc;
+$color-pink: #EC1164;
+$color-blue: #00B8F1;
+
+body {
+    background-color: $color-blue;
+}
+
+.header {
+    margin: 0 -15px;
+
+    background-image: url("/assets/pages/flash-event/background-large.jpg");
+    background-size:cover;
+    background-position: center bottom;
+    height: 100vh;
+
+    .logo {
+        background-image: url("/assets/pages/flash-event/logo-large.png");
+        background-size: 100% 100%;
+        height: 225px;
+        width: 1000px;
+
+        position: absolute;
+        top: 20%;
+
+
+        @media (max-width: 1100px) {
+            height: 135px;
+            width: 600px;
+        }
+
+        @media (max-width: 700px) {
+            height: 101px;
+            width: 450px;
+        }
+
+        @media (max-width: 471px) {
+            height: 90px;
+            width: 400px;
+        }
+
+        @media (max-width: 401px) {
+            height: 79px;
+            width: 350px;
+        }
+
+        @media (max-width: 351px) {
+            height: 67px;
+            width: 300px;
+        }
+
+        @media (min-width: 700px) and (max-height: 600px) {
+            height: 101px;
+            width: 450px;
+        }
+
+    }
+
+    .buy-button {
+        background-image: url("/assets/pages/flash-event/button-large.png");
+        background-size: 100% 100%;
+        height: 105px;
+        width: 385px;
+
+        position: absolute;
+        bottom: 20%;
+        left: 20%;
+
+
+        @media (min-width: 550px) and (max-height: 600px) {
+            left: auto;
+            right: 10%;
+        }
+
+        @media (max-width: 550px) {
+            left: auto;
+            right: 10%;
+        }
+
+        @media (max-width: 450px) {
+            left: auto;
+            right: 5%;
+        }
+    }
+}
+
+.atracoes {
+    margin-top: 20px;
+
+    h1 {
+        margin-top: 0;
+        color: $color-white;
+    }
+
+    img {
+        width: 100%;
+        margin-bottom: 20px ;
+    }
+}
+
+.local {
+    background-color: $color-pink;
+    margin-bottom: 20px;
+
+    .map {
+        width: 100%;
+        height: 50vh;
+    }
+}
+
+.patrocinadores {
+    img {
+        width: 100%;
+    }
+    margin-bottom: 20px;
+}

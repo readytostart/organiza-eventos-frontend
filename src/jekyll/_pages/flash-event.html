@@ -1,0 +1,105 @@
+---
+permalink: /flash-event/
+---
+
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'en'}}">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Flash event: Economia criativa e inovação</title>
+
+    <meta property="og:image:url"
+          content="https://www.organizaevento.blog.br/assets/pages/flash-event/image-share-social-network.png"/>
+
+    <link rel="stylesheet" href="{{ '/assets/third-party/bootstrap.css'| relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/third-party/bootstrap-theme.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/flash-event.css' | relative_url }}">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700" rel="stylesheet">
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}"
+          href="{{ '/feed.xml' | relative_url }}">
+
+
+    {% if site.google_analytics %}
+    {% include google-analytics.html %}
+    {% endif %}
+    {% if site.facebook_pixel %}
+    {% include facebook-pixel.html %}
+    {% endif %}
+</head>
+
+
+<body class="container-fluid flash-event">
+
+<a href="https://www.sympla.com.br/flashevent-economia-criativa-e-inovacao__193880" target="_blank">
+    <div class="header">
+        <div class="logo"></div>
+        <div class="buy-button"></div>
+    </div>
+</a>
+
+
+<div class="atracoes">
+    <div class="row">
+        <div class="col-xs-12">
+            <h1>ATRAÇÕES CONFIRMADAS</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2 col-md-4 col-sm-6 col-lg-offset-1"><img src="/assets/pages/flash-event/atracao-1.png"/></div>
+        <div class="col-lg-2 col-md-4 col-sm-6"><img src="/assets/pages/flash-event/atracao-2.png"/></div>
+        <div class="col-lg-2 col-md-4 col-sm-6"><img src="/assets/pages/flash-event/atracao-3.png"/></div>
+        <div class="col-lg-2 col-md-4 col-sm-6 col-lg-offset-0 col-md-offset-2"><img src="/assets/pages/flash-event/atracao-4.png"/></div>
+        <div class="col-lg-2 col-md-4 col-sm-6 col-lg-offset-0 col-md-offset-0 col-sm-offset-3"><img src="/assets/pages/flash-event/atracao-5.png"/></div>
+    </div>
+</div>
+
+<div class="local">
+    <div class="row">
+        <div class="map" id="map">
+
+        </div>
+    </div>
+</div>
+
+<div class="patrocinadores">
+    <img src="/assets/pages/flash-event/patrocinadores.png"/>
+</div>
+
+<script>
+    function initMap() {
+        var infowindow = new google.maps.InfoWindow();
+
+        var location = {lat: -27.5980467, lng: -48.5485223};
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 15,
+            center: location
+        });
+        google.maps.event.addDomListener(window, 'resize', function() {
+            setTimeout(function () {
+                google.maps.event.trigger(map, 'resize');
+                map.setCenter(location);
+            }, 100)
+        });
+
+        var marker = new google.maps.Marker({
+            map: map,
+            position:location
+        });
+
+        infowindow.setContent('<div>'
+            + '<strong>Cocreation Lab Centro Sapiens - Museu da Escola Catarinense</strong><br>'
+            + 'Rua Saldanha Marinho, 196 - Centro, Florianópolis'
+            + '</div>');
+        infowindow.open(map, marker);
+    }
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA23ngyQV4Kh5GLr4SQV0UJKz-TTswgcaU&callback=initMap">
+</script>
+
+</body>
+
+</html>
